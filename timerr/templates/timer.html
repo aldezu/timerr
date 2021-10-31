@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TIMER</title>
+   <!-- <link href="static/style.css" rel="stylesheet"> -->
+
+</head>
+<body>
+    <h1>Timer</h1>
+        <p id="repsleft">Подходов осталось: {{form.reps}}</p>
+        <p id="tasksleft">Упражнений осталось: {{form.tasksn}}</p>
+        <p id="countdown"></p>
+        <script>
+        let reps = '{{form.reps}}';
+        let tasksn = '{{form.tasksn}}';
+        let tft = '{{form.worktime}}';
+        let tfr = '{{form.resttime}}';
+        const countdownEl = document.getElementById('countdown');
+        const repsEl = document.getElementById('repsleft');
+        const tasksEl = document.getElementById('tasksleft');
+        let time = tft;
+        let tasks = tasksn;
+        let repsleft = reps;
+        let flag = true;
+        setInterval(updateCountdown, 1000);
+            
+        function updateCountdown(){
+            countdownEl.innerHTML = `${time}`;
+            time--; 
+            if (time == 0){
+                if (tasks == 0){
+                    time = tfr;
+                    repsleft --;
+                    tasks = tasksn;
+                    repsEl.innerHTML = "Подходов осталось:" + repsleft;
+                    tasksEl.innerHTML = "Отдых";
+                } else{
+                tasks --;
+                time = tft;
+                tasksEl.innerHTML = "Упражнений осталось:" + tasks;
+                }
+                }
+            if (repsleft <= 0){
+                repsEl.innerHTML = "Всё!";
+                tasksEl.innerHTML = "Конец!";
+                countdownEl.innerHTML = "Хватит!";
+            }
+        }
+        </script>
+    <button><a href="/">Назад</a></button>
+</body>

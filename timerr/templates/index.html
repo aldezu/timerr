@@ -1,0 +1,29 @@
+<body>
+    <h1>TIMERR</h1>
+    <form method="POST" action="timer/">
+        {% csrf_token %}
+        <h3>Подходов:</h3>
+            <input name="reps" type="number" value="10" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+            <output>10</output>
+        <h3>Упражнений:</h3>
+           <input name="tasksn" type="number" value="10" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+            <output>10</output>
+<!---            <h3>Упражнения:</h3>
+            <select name="tasks" multiple>
+                {% for it in dat.all %}
+                <option value="{{it.id}}">{{it.name}}</option>
+                {% endfor %}    
+            </select>---> 
+
+        <h3>Время на упражнения: (в секундах)</h3>
+            <input name="worktime" type="number" value="60" min="1" max="120" oninput="this.nextElementSibling.value = this.value">
+            <output>60</output>
+
+        <h3>Время на отдых: (в секундах)</h3>
+    
+            <input name="resttime" type="number" value="60" min="1" max="120" oninput="this.nextElementSibling.value = this.value">
+            <output>60</output>
+        <p></p>    
+        <input type="submit" value="запустить таймер">
+    </form>
+</body>
