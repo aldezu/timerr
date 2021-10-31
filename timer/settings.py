@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 Django settings for timer project.
 
@@ -122,7 +121,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = 'static'
-=======
 """
 Django settings for timer project.
 
@@ -246,4 +244,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = 'static'
->>>>>>> bf951f97d158aa780b63d004045204e2839eafd3
