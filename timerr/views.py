@@ -16,6 +16,7 @@ def GoToTimer(request):
     if request.method == 'POST':
         form = request.POST.copy()
         del form['csrfmiddlewaretoken']
+        form['tasksn'] = int(form['tasksn']) - 1 
         return render(request, 'timer.html', {'form':form})
     else:
         Form = AddForm()
