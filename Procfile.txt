@@ -1,1 +1,1 @@
-web: gunicorn timerr.timer.wsgi
+web: gunicorn timer.wsgi
