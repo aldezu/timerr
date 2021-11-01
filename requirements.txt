@@ -6,7 +6,11 @@ chardet==4.0.0
 colorama==0.4.4
 Django==3.0.2
 django-crispy-forms==1.11.2
+<<<<<<< HEAD
 gunicorn==20.1.0
+=======
+gunicorn==20.0.4
+>>>>>>> 41df36f8f423f0355ae8b895b53c03f14b7790b3
 idna==2.10
 isort==5.7.0
 lazy-object-proxy==1.4.3
