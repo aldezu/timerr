@@ -9,7 +9,7 @@
 <body>
     <h1>Timer</h1>
         <p id="repsleft">Подходов осталось: {{form.reps}}</p>
-        <p id="tasksleft"></p>
+        <p id="tasksleft">Упражнений осталось: {{form.tasksn}}</p>
         <p id="countdown"></p>
         <script>
         let reps = '{{form.reps}}';
@@ -22,7 +22,7 @@
         let time = tft;
         let tasks = tasksn;
         let repsleft = reps;
-        let flag = true;
+        let flag = false;
         setInterval(updateCountdown, 1000);
             
         function updateCountdown(){
@@ -33,11 +33,16 @@
                     tasks = tasksn;
                     repsEl.innerHTML = "Подходов осталось:" + repsleft;
                     tasksEl.innerHTML = "Отдых";
+                    flag = false;
+                    tasks ++;
                 } else{
-                tasks --;
+                if (flag == false){
+                    tasks --;
+                    flag == true;
+                }
                 time = tft;
                 tasksEl.innerHTML = "Упражнений осталось:" + tasks;
-                }
+            }
                 }
             if (repsleft <= 0){
                 repsEl.innerHTML = "Всё!";
